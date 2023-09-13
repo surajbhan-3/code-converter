@@ -10,6 +10,14 @@ const app = express();
 app.use(express.json());
 app.use(cors())
  
+app.get("/", async(req,res)=>{
+
+     try {
+         return res.send("welcome to homepage")
+     } catch (error) {
+        return res.send(error)
+     }
+})
 
 app.post('/convert_code', async (req, res) => {
     console.log(req.body)
